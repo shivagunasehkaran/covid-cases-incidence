@@ -7,16 +7,11 @@
  */
 
 import React from 'react';
-import {SafeAreaView, Text, View} from 'react-native';
+// container component
+import PrimaryContainer from './containers';
 
 const App = () => {
-  return (
-    <SafeAreaView>
-      <View>
-        <Text>{'Test'}</Text>
-      </View>
-    </SafeAreaView>
-  );
+  return <PrimaryContainer />;
 };
 
 export default App;
