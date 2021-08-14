@@ -5,11 +5,16 @@
 
 import React from 'react';
 import type {Node} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 // container component
 import PrimaryContainer from './containers';
 
 const App = (): Node => {
-  return <PrimaryContainer />;
+  return (
+    <NavigationContainer>
+      <PrimaryContainer />
+    </NavigationContainer>
+  );
 };
 
 export default App;
