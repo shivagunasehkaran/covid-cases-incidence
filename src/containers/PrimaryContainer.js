@@ -1,10 +1,23 @@
 // react library imports
 import React from 'react';
-import {Text} from 'react-native';
-
+import {createStackNavigator} from '@react-navigation/stack';
+// route imports
+import * as NAV_ROUTES from '../routes/Routes';
+import * as NAVIGATION from '../routes/Navigator';
 // base stack
+const Stack = createStackNavigator();
+
 const PrimaryContainer = props => {
-  return <Text>{'Primary container'}</Text>;
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        options={{headerShown: false}}
+        key={NAV_ROUTES.pageNamePublicStack}
+        name={NAV_ROUTES.pageNamePublicStack}
+        component={NAVIGATION.PublicRoutes}
+      />
+    </Stack.Navigator>
+  );
 };
 
 export default PrimaryContainer;
