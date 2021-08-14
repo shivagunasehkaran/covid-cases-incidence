@@ -5,13 +5,8 @@
 // library imports
 import type {Node} from 'react';
 import React, {useState} from 'react';
-import {
-  SafeAreaView,
-  SectionList,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {SafeAreaView, SectionList, Text, View} from 'react-native';
+import SectionHeader from '../../components/SectionHeader';
 // util imports
 import {ConstantText} from '../../utills/ConstantText';
 import {SectionListInitialData} from '../../utills/SectionListInitialData';
@@ -59,9 +54,11 @@ const Dashboard = (props): Node => {
             keyExtractor={childListKeyExtractor}
             renderSectionHeader={({section: {title, id}}) => {
               return (
-                <TouchableOpacity onPress={() => handleSelectedIndex(id)}>
-                  <Text style={styles.header}>{title}</Text>
-                </TouchableOpacity>
+                <SectionHeader
+                  title={title}
+                  index={id}
+                  onPress={() => handleSelectedIndex(id)}
+                />
               );
             }}
           />
