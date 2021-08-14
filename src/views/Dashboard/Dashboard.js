@@ -12,12 +12,15 @@ import {ConstantText} from '../../utills/ConstantText';
 import {SectionListInitialData} from '../../utills/SectionListInitialData';
 // style imports
 import {styles} from './Dashboard.style';
+// component imports
+import ChildItem from '../../components/ChildItem';
 
 const Dashboard = (props): Node => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [selectedChildIndex, setSelectedChildIndex] = useState(-1);
 
-  // handle index for selection
-  const handleSelectedIndex = id => {
+  // handle index for accordian
+  const handleAccordian = id => {
     if (selectedIndex === id) {
       setSelectedIndex(-1);
     } else {
@@ -25,14 +28,26 @@ const Dashboard = (props): Node => {
     }
   };
 
+  // handle index for nested item
+  const handleChildSelection = id => {
+    if (selectedChildIndex === id) {
+      setSelectedChildIndex(-1);
+    } else {
+      setSelectedChildIndex(id);
+    }
+  };
+
   // section list child item
-  const Item = ({title, section}) => {
+  const Item = ({item, section}) => {
     return (
       <View>
         {selectedIndex === section.id ? (
-          <View style={{backgroundColor: 'green'}}>
-            <Text>{title.name}</Text>
-          </View>
+          <ChildItem
+            item={item}
+            index={item.id}
+            selectedChildIndex={selectedChildIndex}
+            onPress={() => handleChildSelection(item.id)}
+          />
         ) : null}
       </View>
     );
@@ -49,7 +64,7 @@ const Dashboard = (props): Node => {
           <SectionList
             sections={SectionListInitialData}
             renderItem={({item, section}) => (
-              <Item title={item} section={section} />
+              <Item item={item} section={section} />
             )}
             keyExtractor={childListKeyExtractor}
             renderSectionHeader={({section: {title, id}}) => {
@@ -57,7 +72,7 @@ const Dashboard = (props): Node => {
                 <SectionHeader
                   title={title}
                   index={id}
-                  onPress={() => handleSelectedIndex(id)}
+                  onPress={() => handleAccordian(id)}
                 />
               );
             }}
