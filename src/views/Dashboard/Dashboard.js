@@ -6,13 +6,13 @@
 import type {Node} from 'react';
 import React, {useState} from 'react';
 import {SafeAreaView, SectionList, Text, View} from 'react-native';
-import SectionHeader from '../../components/SectionHeader';
 // util imports
 import {ConstantText} from '../../utills/ConstantText';
 import {SectionListInitialData} from '../../utills/SectionListInitialData';
 // style imports
 import {styles} from './Dashboard.style';
 // component imports
+import SectionHeader from '../../components/SectionHeader';
 import ChildItem from '../../components/ChildItem';
 
 const Dashboard = (props): Node => {
