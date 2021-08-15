@@ -9,7 +9,7 @@ export const getCovidIncidence = count => {
     fetch(url)
       .then(res => res.json())
       .then(responseJson => {
-        setState({data: responseJson, isLoading: false});
+        setState({data: responseJson.data['09162'].history, isLoading: false});
       })
       .catch(err => {
         setState({data: err, isLoading: false});
@@ -27,7 +27,7 @@ export const getCovidCases = count => {
     fetch(url)
       .then(res => res.json())
       .then(responseJson => {
-        setState({data: responseJson, isLoading: false});
+        setState({data: responseJson.data['09162'].history, isLoading: false});
       })
       .catch(err => {
         setState({data: err, isLoading: false});
