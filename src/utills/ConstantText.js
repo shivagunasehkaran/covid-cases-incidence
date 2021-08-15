@@ -14,4 +14,5 @@ export const ConstantText = {
   days90: '90 days',
   back: 'Back',
   platform_android: 'android',
+  date: 'Date:  ',
 };
