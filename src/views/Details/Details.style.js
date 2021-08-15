@@ -1,23 +1,24 @@
-// react library imports
 import {StyleSheet} from 'react-native';
-// style imports
 import {ColourPalette} from '../../assets/styles/ColourPalette';
 import {ConstantText} from '../../utills/ConstantText';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  flatListView: {
     backgroundColor: ColourPalette.white,
+    marginVertical: 10,
   },
   title: {
-    marginTop: 10,
-    paddingLeft: 17,
-    fontSize: 24,
-    fontFamily: ConstantText.font_family,
-    fontWeight: ConstantText.font_bold1,
+    margin: 10,
+    fontSize: 20,
+    color: ColourPalette.black,
+    fontFamily: ConstantText.font_family2,
+    fontWeight: ConstantText.font_bold2,
   },
-  listView: {
-    marginVertical: 10,
-    marginHorizontal: 14,
+  loader: {
+    marginTop: 10,
+    alignItems: 'center',
   },
 });
