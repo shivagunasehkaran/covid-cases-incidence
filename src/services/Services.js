@@ -1,9 +1,9 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {GET_URL} from './Constants';
 
 export const getCovidIncidence = count => {
   const [state, setState] = useState({data: null, isLoading: true});
-  const url = GET_URL.INCIDENCE_URL`${count}`;
+  const url = GET_URL.INCIDENCE_URL + `${count}`;
 
   useEffect(() => {
     fetch(url)
@@ -21,7 +21,7 @@ export const getCovidIncidence = count => {
 
 export const getCovidCases = count => {
   const [state, setState] = useState({data: null, isLoading: true});
-  const url = GET_URL.CASES_URL`${count}`;
+  const url = GET_URL.CASES_URL + `${count}`;
 
   useEffect(() => {
     fetch(url)
