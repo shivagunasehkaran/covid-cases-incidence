@@ -12,4 +12,6 @@ export const ConstantText = {
   days30: '30 days',
   days60: '60 days',
   days90: '90 days',
+  back: 'Back',
+  platform_android: 'android',
 };
