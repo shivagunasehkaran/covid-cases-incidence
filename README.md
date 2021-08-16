@@ -79,6 +79,25 @@ Please go ahead and play around  :)
 	-	Coding test is very interesting and I feel its like more useful for the current scenario’s. (Covid-19 pandemic situation)
 
 	-	Feels like helping Chief Nursing Officer to help more Patients with the use of this coding test.
+	
+	
+  ## Screenshots of iOS attached 
 
-
+ <div align="center">
+    <img src="https://user-images.githubusercontent.com/11419839/129563179-89c2d8ce-3aaf-428a-b093-33d4a82e1712.png" width="300" height="650"</img> 
+  </div>
+  <div align="center">
+    <img src="https://user-images.githubusercontent.com/11419839/129563155-2841282e-26db-44fb-9ec0-7b5a5dba5c05.png" width="300" height="650"</img> 
+  </div>
+  <div align="center">
+    <img src="https://user-images.githubusercontent.com/11419839/129563162-29309a01-00e6-441a-87f3-cbe8d1a0c545.png" width="300" height="650"</img> 
+  </div>
+  <div align="center">
+    <img src="https://user-images.githubusercontent.com/11419839/129563169-cfc21d63-3726-4705-b4ff-06a09d67a6f7.png" width="300" height="650"</img> 
+  </div>
+   <div align="center">
+    <img src="https://user-images.githubusercontent.com/11419839/129563149-6d98f82e-d83d-4afd-adaf-afa9f7828661.png" width="300" height="650"</img> 
+  </div>
+  
+  
 ## Happy coding ...
