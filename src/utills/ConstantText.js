@@ -15,5 +15,7 @@ export const ConstantText = {
   back: 'Back',
   platform_android: 'android',
   date: 'Date:  ',
-  weekIncidence: 'Week Incidence:  ',
+  weekIncidence: 'Week Incidence :  ',
+  casesVal: 'CASES :  ',
+  loaderSize: 'large'
 };
