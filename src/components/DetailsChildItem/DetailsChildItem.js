@@ -8,6 +8,7 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import {ConstantText} from '../../utills/ConstantText';
 import {styles} from './DetailsChildItem.style';
+import {formatDateToDisplayDate} from '../../utills/utills';
 
 type DetailsChildItemProp = {
   item: Object,
@@ -27,7 +28,9 @@ const DetailsChildItem = (props: DetailsChildItemProp): Node => {
     <View style={styles.container}>
       <View style={styles.secondaryContainer}>
         <View style={styles.textView}>
-          <Text style={styles.title}>{`${ConstantText.date}${date}`}</Text>
+          <Text style={styles.title}>{`${
+            ConstantText.date
+          }${formatDateToDisplayDate(date)}`}</Text>
         </View>
         <View style={styles.textView}>
           <Text style={styles.title}>{cases}</Text>
