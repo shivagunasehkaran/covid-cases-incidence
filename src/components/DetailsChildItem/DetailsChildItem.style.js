@@ -18,11 +18,18 @@ export const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   textView: {
-    justifyContent: 'center',
+    flexDirection: 'row',
     margin: 10,
   },
   title: {
     paddingLeft: 20,
+    color: ColourPalette.white,
+    fontSize: 17,
+    fontFamily: ConstantText.font_family2,
+    fontWeight: ConstantText.font_bold2,
+  },
+  date: {
+    paddingLeft: 100,
     color: ColourPalette.white,
     fontSize: 17,
     fontFamily: ConstantText.font_family2,
