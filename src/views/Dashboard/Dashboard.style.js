@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   title: {
     marginTop: 10,
     paddingLeft: 17,
-    fontSize: 24,
+    fontSize: 30,
     fontFamily: ConstantText.font_family,
     fontWeight: ConstantText.font_bold1,
   },

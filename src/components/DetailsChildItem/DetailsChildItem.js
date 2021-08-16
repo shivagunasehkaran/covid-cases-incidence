@@ -28,12 +28,15 @@ const DetailsChildItem = (props: DetailsChildItemProp): Node => {
     <View style={styles.container}>
       <View style={styles.secondaryContainer}>
         <View style={styles.textView}>
+          <Text
+            style={
+              styles.title
+            }>{`${ConstantText.weekIncidence}${cases}`}</Text>
+        </View>
+        <View style={styles.textView}>
           <Text style={styles.title}>{`${
             ConstantText.date
           }${formatDateToDisplayDate(date)}`}</Text>
-        </View>
-        <View style={styles.textView}>
-          <Text style={styles.title}>{cases}</Text>
         </View>
       </View>
     </View>

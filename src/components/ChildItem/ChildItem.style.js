@@ -12,13 +12,13 @@ export const styles = StyleSheet.create({
     marginHorizontal: 20,
     padding: 15,
   },
-  nameView: {
+  textView: {
     flex: 3,
     paddingLeft: 20,
   },
-  name: {
+  text: {
     color: ColourPalette.white,
-    fontSize: 14,
+    fontSize: 16,
     fontFamily: ConstantText.font_family2,
     fontWeight: ConstantText.font_bold2,
   },

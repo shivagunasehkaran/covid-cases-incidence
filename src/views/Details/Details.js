@@ -30,7 +30,7 @@ const Details = () => {
   const childRenderFooter = () => {
     return isLoading ? (
       <View style={styles.loader}>
-        <ActivityIndicator size={'large'} color={ColourPalette.black} />
+        <ActivityIndicator size={'large'} color={ColourPalette.darkGrey} />
       </View>
     ) : null;
   };

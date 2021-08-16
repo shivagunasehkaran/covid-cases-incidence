@@ -25,15 +25,15 @@ describe('Dashboard screen : sectionlist', () => {
         data: [
           {
             id: 1,
-            name: ConstantText.days30,
+            days: ConstantText.days30,
           },
           {
             id: 2,
-            name: ConstantText.days60,
+            days: ConstantText.days60,
           },
           {
             id: 3,
-            name: ConstantText.days90,
+            days: ConstantText.days90,
           },
         ],
       },
@@ -43,15 +43,15 @@ describe('Dashboard screen : sectionlist', () => {
         data: [
           {
             id: 1,
-            name: ConstantText.days30,
+            days: ConstantText.days30,
           },
           {
             id: 2,
-            name: ConstantText.days60,
+            days: ConstantText.days60,
           },
           {
             id: 3,
-            name: ConstantText.days90,
+            days: ConstantText.days90,
           },
         ],
       },

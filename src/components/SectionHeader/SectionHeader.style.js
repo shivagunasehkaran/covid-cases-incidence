@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     color: ColourPalette.white,
-    fontSize: 14,
+    fontSize: 17,
     fontFamily: ConstantText.font_family2,
     fontWeight: ConstantText.font_bold2,
   },

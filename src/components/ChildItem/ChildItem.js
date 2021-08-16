@@ -22,7 +22,7 @@ const ChildItem = (props: ChildItemProp): Node => {
   // getting data from parent & null check
   let items = props.item ? props.item : null;
   let index = props.index ? props.index : null;
-  let name = items ? items.name : '';
+  let days = items ? items.days : '';
   let selectedChildIndex = props.selectedChildIndex
     ? props.selectedChildIndex
     : null;
@@ -34,8 +34,8 @@ const ChildItem = (props: ChildItemProp): Node => {
   return (
     <TouchableOpacity onPress={() => props.onPress(items, index)}>
       <View style={styles.container}>
-        <View style={styles.nameView}>
-          <Text style={styles.name}>{name}</Text>
+        <View style={styles.textView}>
+          <Text style={styles.text}>{days}</Text>
         </View>
         <View style={styles.imageView}>
           <Image
