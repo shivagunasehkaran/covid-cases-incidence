@@ -6,15 +6,15 @@
 import type {Node} from 'react';
 import React, {useState} from 'react';
 import {SafeAreaView, SectionList, Text, View} from 'react-native';
+import ChildItem from '../../components/ChildItem';
+// component imports
+import SectionHeader from '../../components/SectionHeader';
+import {pageNameDetails} from '../../routes/Routes';
 // util imports
 import {ConstantText} from '../../utills/ConstantText';
 import {SectionListInitialData} from '../../utills/SectionListInitialData';
 // style imports
 import {styles} from './Dashboard.style';
-// component imports
-import SectionHeader from '../../components/SectionHeader';
-import ChildItem from '../../components/ChildItem';
-import {pageNameDetails, pageNamePublicStack} from '../../routes/Routes';
 
 const Dashboard = (props): Node => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -30,19 +30,21 @@ const Dashboard = (props): Node => {
   };
 
   // move to details screen
-  const goToDetails = () => {
-    props.navigation.push(pageNamePublicStack, {
-      screen: pageNameDetails,
+  const goToDetails = days => {
+    props.navigation.push(pageNameDetails, {
+      endPoints:
+        selectedIndex === 1 ? ConstantText.incidence : ConstantText.cases,
+      days: days,
     });
   };
 
   // handle index for nested item
-  const handleChildSelection = id => {
+  const handleChildSelection = (id, days) => {
     if (selectedChildIndex === id) {
       setSelectedChildIndex(-1);
     } else {
       setSelectedChildIndex(id);
-      goToDetails();
+      goToDetails(days);
     }
   };
 
@@ -55,7 +57,7 @@ const Dashboard = (props): Node => {
             item={item}
             index={item.id}
             selectedChildIndex={selectedChildIndex}
-            onPress={() => handleChildSelection(item.id)}
+            onPress={() => handleChildSelection(item.id, item.days)}
           />
         ) : null}
       </View>

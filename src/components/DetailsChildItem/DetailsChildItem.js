@@ -21,17 +21,20 @@ type DetailsChildItemProp = {
 const DetailsChildItem = (props: DetailsChildItemProp): Node => {
   // getting data from parent & null check
   let item = props.item ? props.item : null;
-  let cases = item ? item.weekIncidence : null;
+  let incidence = item ? item.weekIncidence : null;
+  let cases = item ? item.cases : null;
   let date = item ? item.date : null;
-
+  let endPoints = props.endPoints ? props.endPoints : null;
+  const firstText =
+    endPoints === ConstantText.incidence
+      ? ConstantText.weekIncidence
+      : ConstantText.casesVal;
+  const firstValues = endPoints === ConstantText.incidence ? incidence : cases;
   return (
     <View style={styles.container}>
       <View style={styles.secondaryContainer}>
         <View style={styles.textView}>
-          <Text
-            style={
-              styles.title
-            }>{`${ConstantText.weekIncidence}${cases}`}</Text>
+          <Text style={styles.title}>{`${firstText}${firstValues}`}</Text>
         </View>
         <View style={styles.textView}>
           <Text style={styles.title}>{`${ConstantText.date}`}</Text>

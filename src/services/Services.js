@@ -14,7 +14,7 @@ export const getCovidIncidence = count => {
       .catch(err => {
         setState({data: err, isLoading: false});
       });
-  }, []);
+  }, [count]);
 
   return state;
 };
@@ -32,7 +32,7 @@ export const getCovidCases = count => {
       .catch(err => {
         setState({data: err, isLoading: false});
       });
-  }, []);
+  }, [count]);
 
   return state;
 };

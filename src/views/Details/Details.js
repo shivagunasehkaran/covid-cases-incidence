@@ -1,26 +1,33 @@
 // library imports
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   ActivityIndicator,
   FlatList,
   SafeAreaView,
-  View,
   Text,
+  View,
 } from 'react-native';
-// components imports
-import {getCovidIncidence} from '../../services/Services';
+import {ColourPalette} from '../../assets/styles/ColourPalette';
 import DetailsChildItem from '../../components/DetailsChildItem';
+// components imports
+import {getCovidCases, getCovidIncidence} from '../../services/Services';
+import {ConstantText} from '../../utills/ConstantText';
 // styles imports
 import {styles} from './Details.style';
-import {ColourPalette} from '../../assets/styles/ColourPalette';
-import {ConstantText} from '../../utills/ConstantText';
 
-const Details = () => {
-  const {data, isLoading} = getCovidIncidence(30);
+const Details = props => {
+  // getting props
+  const endPoints = props.route.params.endPoints;
+  const days = props.route.params.days.substring(0, 2);
+  // calling API based on days count
+  const {data, isLoading} =
+    endPoints === ConstantText.incidence
+      ? getCovidIncidence(days)
+      : getCovidCases(days);
 
   // child render item
   const childListRenderItem = ({item, index}) => {
-    return <DetailsChildItem item={item} />;
+    return <DetailsChildItem item={item} endPoints={endPoints} />;
   };
 
   // child KeyExtractor
@@ -30,7 +37,10 @@ const Details = () => {
   const childRenderFooter = () => {
     return isLoading ? (
       <View style={styles.loader}>
-        <ActivityIndicator size={'large'} color={ColourPalette.darkGrey} />
+        <ActivityIndicator
+          size={ConstantText.loaderSize}
+          color={ColourPalette.darkGrey}
+        />
       </View>
     ) : null;
   };
@@ -39,13 +49,12 @@ const Details = () => {
     <View style={styles.container}>
       <SafeAreaView>
         <View style={styles.flatListView}>
-          <Text style={styles.title}>{ConstantText.incidence}</Text>
+          <Text style={styles.title}>{props.route.params.endPoints}</Text>
           <FlatList
             data={data}
             renderItem={childListRenderItem}
             keyExtractor={childListKeyExtractor}
             ListFooterComponent={childRenderFooter}
-            onEndReachedThreshold={0}
           />
         </View>
       </SafeAreaView>
